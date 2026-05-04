@@ -8,7 +8,7 @@ You play as a lion charging through a neon-pastel grove full of platforms that l
 
 ---
 
-## 🎮 Controls
+## Controls🎮/ How to play?
 
 | Input | Action |
 |-------|--------|
