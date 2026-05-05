@@ -158,7 +158,7 @@ The `vanish` type requires the extra fields shown above. All others only need `x
 4. Add a legend entry to the `LEGEND` array in `js/platforms.js`
 
 ---
-
+#MY FIRST GAME
 ## 📜 License
 
 MIT — use it, remix it, make it meaner.
