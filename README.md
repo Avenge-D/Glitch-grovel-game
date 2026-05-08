@@ -159,6 +159,7 @@ The `vanish` type requires the extra fields shown above. All others only need `x
 
 ---
 #MY FIRST GAME
+#Instantrxn
 ## 📜 License
 
 MIT — use it, remix it, make it meaner.
@@ -166,3 +167,4 @@ MIT — use it, remix it, make it meaner.
 ---
 
 *Made with HTML5 Canvas and zero mercy.*
+
