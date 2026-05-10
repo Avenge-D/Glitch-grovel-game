@@ -167,4 +167,5 @@ MIT — use it, remix it, make it meaner.
 ---
 
 *Made with HTML5 Canvas and zero mercy.*
+#github
 
