@@ -1,171 +1,111 @@
 # 🦁 Glitch Grove
 
-> *A 2D troll platformer where the environment is a liar.*
+A 2D troll platformer where the environment is a liar. You play as a bouncy lion navigating a neon-pastel grove full of platforms that betray you at every turn.
 
-You play as a lion charging through a neon-pastel grove full of platforms that look safe — and aren't. No complex controls. Just left, right, jump, and pure betrayal.
+**[▶ Play it live](https://YOUR-USERNAME.github.io/glitch-grove/)** ← replace `YOUR-USERNAME` with your GitHub username after deploying
 
-**[▶ Play it live on GitHub Pages](https://YOUR-USERNAME.github.io/glitch-grove/)**
+![Glitch Grove Screenshot](screenshot.png)
 
----
-
-## Controls🎮/ How to play?
-
-| Input | Action |
-|-------|--------|
-| `←` / `A` | Move left |
-| `→` / `D` | Move right |
-| `Space` / `↑` / `W` | Jump |
-| On-screen buttons | Mobile / touch support |
+> **🚀 Ready for GitHub Pages — just push and enable Pages in your repo Settings!**
 
 ---
 
-## 💀 Platform Types
+## Gameplay
 
-Every platform has a color. Colors lie — but they're consistent lies.
+Use **← → Arrow Keys** (or **A / D**) to move and **Space / ↑ / W** to jump.
 
-| Color | Type | What it does |
-|-------|------|--------------|
-| 🟣 **Purple** | Safe | Normal solid platform — the rare honest one |
-| 🔴 **Red** | Spikes | Instant death the moment you touch it |
-| 🩵 **Cyan** | Fake | Looks solid, phases you straight through — instant death |
-| 🔵 **Blue** | Ice | You land, but slide sideways uncontrollably |
-| 🟠 **Orange** | Bounce | Launches you violently upward, usually into something bad |
-| 🟢 **Green** | Vanish | Shows a flashing `!` warning ~0.9s before disappearing forever |
-| 🟫 **Dark orange** | Hot | Survivable for ~0.6 seconds — then you're ash |
+On mobile, tap the on-screen buttons.
 
----
+### Platform Types
 
-## 🗺️ Levels
-
-| # | Name | What's coming for you |
-|---|------|----------------------|
-| 1 | *First Steps* | Intro level — one vanishing platform to ease you in |
-| 2 | *Cold Blood* | Ice + spike combos. The slide will kill you. |
-| 3 | *Boing Boing Bye* | Bounce pads launching you into vanishing platforms |
-| 4 | *The Floor Is Lying* | Hot floors and fake platforms side by side |
-| 5 | *Full Grove* | Every trap type active simultaneously. Trust nothing. |
+| Color | Type | Effect |
+|-------|------|--------|
+| 🟣 Purple | Safe | Normal solid platform |
+| 🔴 Red | Spikes | Instant death on touch |
+| 🔵 Cyan | Fake | Looks solid — phases you through, instant death |
+| 🔵 Blue | Ice | You land but slide uncontrollably |
+| 🟠 Orange | Bounce | Launches you violently upward |
+| 🟢 Green | Vanish | Warns you with a flashing `!` then disappears |
+| 🟤 Dark orange | Hot | Burns you dead after ~0.6 seconds of standing |
 
 ---
 
-## 🧠 How the Traps Work
+## Levels
 
-**Vanish** platforms give you a sub-1-second visual warning (a red `!` bubble above the platform + a screen warning) before disappearing. They respawn after 3 seconds.
-
-**Hot** platforms let you stand briefly — the burn timer starts the moment you land. Get off within 0.6 seconds or die.
-
-**Fake** platforms render identically to safe ones except for a slightly different color shade. They have no collision — you fall through instantly.
-
-**Bounce** platforms launch the lion at 155% jump speed. Combine with spikes above for maximum chaos.
-
-**Ice** platforms add lateral drift on landing — your momentum keeps going even after you stop pressing the key.
+| Level | Theme |
+|-------|-------|
+| 1 | Tutorial — vanishing platform introduction |
+| 2 | Ice + spikes combo |
+| 3 | Bounce pads + vanishing platforms |
+| 4 | Hot floors + fake platforms |
+| 5 | Full chaos — all trap types |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 glitch-grove/
-├── index.html              # Entry point — loads all scripts in order
+├── index.html          # Entry point
 ├── css/
-│   └── style.css           # Canvas layout, HUD, mobile buttons
+│   └── style.css       # All styles
 ├── js/
-│   ├── levels.js           # All 5 level definitions (platforms, goals, messages)
-│   ├── lion.js             # Lion character — full canvas drawing function
-│   ├── platforms.js        # Platform rendering, legend, and AABB collision
-│   ├── particles.js        # Particle system (death bursts, goal celebrations)
-│   └── game.js             # Main loop, physics, input handling, trap logic
+│   ├── levels.js       # Level data definitions
+│   ├── lion.js         # Lion character drawing
+│   ├── platforms.js    # Platform rendering & collision
+│   ├── particles.js    # Particle system
+│   └── game.js         # Main game loop & physics
 └── README.md
 ```
 
-No build tools. No dependencies. No `node_modules`. Just open `index.html`.
-
 ---
 
-## 🚀 Running Locally
+## Running Locally
+
+No build tools needed — it's plain HTML, CSS, and JavaScript.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/glitch-grove.git
 cd glitch-grove
+```
 
-# Option 1 — just open in browser
-open index.html
+Then open `index.html` directly in your browser — no build step needed.
 
-# Option 2 — local dev server (avoids any file:// quirks)
+Or use a local server:
+```bash
 npx serve .
-# or
-python3 -m http.server 8080
 ```
 
 ---
 
-## 🌐 Deploying to GitHub Pages
+## Deploying to GitHub Pages
 
-1. Push this repo to GitHub
-2. Go to your repo → **Settings** → **Pages**
-3. Under *Source*, select **Deploy from a branch**
-4. Choose `main` branch, `/ (root)` folder → **Save**
-5. Wait ~60 seconds → your game is live at:
+1. Create a new repo on GitHub named `glitch-grove` (keep it public).
+2. In your local project folder, run:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit — Glitch Grove 🦁"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/glitch-grove.git
+   git push -u origin main
+   ```
+3. On GitHub go to **Settings → Pages**.
+4. Set **Source** to `Deploy from a branch`, branch = `main`, folder = `/ (root)`.
+5. Click **Save** — your game is live at `https://YOUR-USERNAME.github.io/glitch-grove/` within ~60 seconds.
 
-```
-https://YOUR-USERNAME.github.io/glitch-grove/
-```
-
-No configuration file needed. GitHub Pages serves `index.html` automatically.
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Choice | Why |
-|-------|--------|-----|
-| Rendering | HTML5 Canvas 2D | Full control over every pixel, no overhead |
-| Logic | Vanilla JavaScript (ES6) | Zero dependencies, runs anywhere |
-| Layout | CSS3 | Flexbox for centering, pointer events for mobile |
-| Hosting | GitHub Pages | Free, instant, no server required |
+> The `.nojekyll` file in this repo ensures GitHub Pages serves all files correctly.
 
 ---
 
-## ✏️ Adding a New Level
+## Tech Stack
 
-Open `js/levels.js` and add an object to the array inside `buildLevels()`:
-
-```js
-{
-  groundY: 330,
-  goal: { x: 620, y: 308 },
-  msg: 'Your level intro message here.',
-  platforms: [
-    { x: 150, y: 260, w: 90, h: 14, type: 'normal' },
-    { x: 300, y: 210, w: 80, h: 14, type: 'spike'  },
-    { x: 450, y: 250, w: 80, h: 14, type: 'vanish',
-      vanishDelay: 3000, warnCountdown: 0,
-      warnPhase: false, gone: false, respawn: 0 },
-  ],
-}
-```
-
-Platform `type` options: `normal` · `spike` · `fake` · `ice` · `bounce` · `vanish` · `hot`
-
-The `vanish` type requires the extra fields shown above. All others only need `x`, `y`, `w`, `h`, `type`.
+- **Vanilla JavaScript** — no frameworks, no build step
+- **HTML5 Canvas** — all rendering via `CanvasRenderingContext2D`
+- **CSS3** — layout and on-screen controls
 
 ---
 
-## ➕ Adding a New Trap Type
+## License
 
-1. Add a color entry to `PLATFORM_COLORS` in `js/platforms.js`
-2. Add drawing logic inside `drawPlatform()` (the `if (p.type === '...')` block)
-3. Add collision logic inside the `update()` function in `js/game.js`
-4. Add a legend entry to the `LEGEND` array in `js/platforms.js`
-
----
-#MY FIRST GAME
-#Instantrxn
-## 📜 License
-
-MIT — use it, remix it, make it meaner.
-
----
-
-*Made with HTML5 Canvas and zero mercy.*
-#github
-
+MIT — do whatever you want with it.
