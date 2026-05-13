@@ -1,5 +1,0 @@
-<!DOCTYPE html><html><head><title>Glitch Grove</title><style>body{margin:0;background:#000;}canvas{display:block;}</style></head><body>
-  <div id="ui" style="color:white;position:fixed;">Click to jump</div>div><canvas id="c"></canvas>canvas><script>const c=document.getElementById('c'),x=c.getContext('2d');let w,h,p={x:50,y:0,v:0},g=0.5;(loop);
-  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;p.y=h-50;}window.onresize=resize;resize();
-  function loop(){x.fillStyle='#000';x.fillRect(0,0,w,h);p.v+=g;p.y+=p.v;if(p.y>h-50){p.y=h-50;p.v=0;}x.fillStyle='#fb0';x.fillRect(p.x,p.y,40,40);requestAnimationFrame(loop);}window.onclick=()=>p.v=-15;loop();</script></body></html></script>
-</body></style></title></head></html>
