@@ -1,16 +1,5 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-</head<title>Glitch Grove</title>title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html,body{height:100%;background:#000;overflow:hidden;touch-action:none;user-select:none;position:fixed;width:100%;}
-    #gc{display:block;position:absolute;image-rendering:pixelated;}
-    
-  </style><body><canvas id="gc"></canvas>canvas>
-  <div id="hud"><span id="lvl">Level 1/50</span>span><span id="dc">Deaths: 0</span>span></div>div>
-  <div id="ctrl"><div class="dpad"><div class="cbtn" id="btnL">&#9664;</div>div><div class="cbtn" id="btnR">&#9654;</div>div></div>div><div class="cbtn" id="jumpBtn">&#9650;</div>div></div>div>
-  <div id="deathScreen"><div id="troll" style="font-size:32px;">&#128128; YOU DIED &#128128;</div>div><button id="retryBtn">&#9654; TRY AGAIN</button>button></div>div>
-  <script>
-    const canvas=document.getElementById('gc'),ctx=canvas.getContext('2d'),W=854,H=480;canvas.width=W;canvas.height=H;let deaths=0,lvIdx=0,gameState='play',keys={},cameraX=0;const GY=408,GRAV=0.6,JSPD=-13,PSPD=4.5;let pl={x:60,y:GY-30,vx:0,vy:0,w:30,h:30,onG:false};
-  </script></body>
+<!DOCTYPE html><html><head><title>Glitch Grove</title><style>body{margin:0;background:#000;}canvas{display:block;}</style></head><body>
+  <div id="ui" style="color:white;position:fixed;">Click to jump</div>div><canvas id="c"></canvas>canvas><script>const c=document.getElementById('c'),x=c.getContext('2d');let w,h,p={x:50,y:0,v:0},g=0.5;
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;p.y=h-50;}window.onresize=resize;resize();
+  function loop(){x.fillStyle='#000';x.fillRect(0,0,w,h);p.v+=g;p.y+=p.v;if(p.y>h-50){p.y=h-50;p.v=0;}x.fillStyle='#fb0';x.fillRect(p.x,p.y,40,40);requestAnimationFrame(loop);}window.onclick=()=>p.v=-15;loop();</script></body></html></script>
+</body></style></title></head></html>
